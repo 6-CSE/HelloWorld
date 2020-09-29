@@ -1,2 +1,2 @@
-# Hacktoberfest-2020
-Let's get this swag 😎
+# HelloWorld
+This repo is meant to contain hello world programs in various programming languages
