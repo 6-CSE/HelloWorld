@@ -26,6 +26,6 @@ $ mono HelloWorld.exe
 # Uninstall C#
 
 ```
-$ 
+$ sudo apt-get remove C#
 
 ```
