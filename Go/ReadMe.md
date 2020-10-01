@@ -43,3 +43,8 @@ $ go version
 ```
 $ go run HelloWorld.go 
 ```
+# uninstall go
+
+```
+$ sudo apt-get remove --auto-remove golang-go.
+```
