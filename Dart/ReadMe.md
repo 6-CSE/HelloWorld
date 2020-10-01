@@ -34,7 +34,7 @@ $ dart HelloWorld.dart
 
 # uninstall dart   
 
-```
+```   
 $ sudo apt-get remove darts 
 ```
 
