@@ -31,3 +31,10 @@ $ sudo apt-get install dart
 ```
 $ dart HelloWorld.dart
 ```
+
+# uninstall python
+
+```
+$ sudo apt-get remove darts
+```
+
