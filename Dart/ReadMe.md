@@ -32,7 +32,7 @@ $ sudo apt-get install dart
 $ dart HelloWorld.dart
 ```
 
-# uninstall dart
+# uninstall dart   
 
 ```
 $ sudo apt-get remove darts
