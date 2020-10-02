@@ -2,12 +2,12 @@
 # Installation 
 
 
-**How to install Java on Ubuntu**
+**How to install Javascript on Ubuntu**
 
 ```
 $ sudo apt-get update
 
-$ sudo apt-get install ruby-full
+$ sudo apt install nodejs
 ```
 
 ---
@@ -16,7 +16,7 @@ $ sudo apt-get install ruby-full
 # How to run
 
 ```
-$ ruby HelloWorld.rb
+$ node HelloWorld.js
 ```
 
 
@@ -24,6 +24,6 @@ $ ruby HelloWorld.rb
 # Uninstall Java
 
 ```
-$ 
+$ sudo apt-get remove nodejs
 
 ```
