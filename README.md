@@ -9,7 +9,7 @@ This repo is meant to contain hello world programs in various programming langua
 
 Alternatively,
 
-- Clone to repo to your local machine: `git clone `
+- Clone to repo to your local machine: `git clone https://github.com/rishitsaiya/HelloWorld.git`
 (Before committing all files, check if all files are staged atleast. It can be checked using `git status`).
 - Make a new branch to make PR: `git checkout -b <branch_name>`
 - Add your programs in correct locations: `git add .`. (Adds all files here)
