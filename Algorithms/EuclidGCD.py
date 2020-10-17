@@ -4,7 +4,6 @@ import sys
 def gcd_euclid(a, b):
 	if a == 0 :       #base case
 		return b
-
 	return gcd_euclid(b%a, a) # recursive case
 
 #Test cases:
