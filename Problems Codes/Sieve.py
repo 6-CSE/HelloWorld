@@ -11,3 +11,4 @@ def sieve():
     p[2] = 1
 
 sieve()
+print(p)
