@@ -1,0 +1,76 @@
+<!-- This is a comment in HTML. -->
+
+<!-- In a HTML document, you always begin by telling the browser what version of HTML you will be using. HTML5 is the
+current standard, so we will use that: -->
+<!DOCTYPE html>
+<!-- "But wait", you say, "that just says HTML, not HTML5!" As it turns out, that IS how you set the document to be HTML5.
+Simple, huh? -->
+
+<!-- In HTML, you wrap almost everything in tags. Here is the opening tag for the <head> of the document. If you skip down
+to line #58 you will see how we close it. -->
+<head>
+<!-- Inside the <head> area is where you place everyhting BUT the actual content of the page. You will put things like
+javascript and CSS in here, as well as the page title (the text that will appear on the browser tab). In fact, let's do
+that right now: -->
+	<title>HTML and CSS "Hello World"</title>
+<!-- Let's place a little bit of CSS in here. You will need to wrap it in a pair of <style> tags (just like <head>). -->
+	<style>
+	/* This is a CSS comment. Because we are in the <style> area, this will all get parsed as CSS */
+	
+	/* CSS is how you style HTML elements. Let's break this bit of CSS down:*/
+		body {
+			background-color: #2D2D2D;
+		}
+		/* The first part (body) is a "selector". This is the part of a CSS statment that tells the browser what to 
+		apply the styling to. In this case, we will be styling the background color of the <body> tag that begins on
+		line 61.
+		
+		Then, inside the curly brackets, and before the colon, we have the "property". There are a LOT of different 
+		CSS properties, here's a pretty full list: http://css-tricks.com/almanac/properties/. 
+		
+		After the property, we have the value. Depending on the property, this could be a Hex color code, a px 
+		value, or even some other weird stuff.
+		
+		Always remember to place a colon between the property ("background-color") and the value ("#2D2D2D"), then 
+		put a semicolon after the value and before the next property (if you have more than one). */
+	
+		/* Here's some more CSS, feel free to mess with it! */
+		h1 {
+			color: #C26356; /* setting the text color */
+			font-size: 30px; /* setting the size of the font */
+			font-family: Menlo, Monaco, fixed-width;
+		}
+		
+		/* You will notice that the font-family property has a fancy value. This allows you to set your preferred 
+		font, followed by a list of comma seperated fall-backs in case the host computer does not have the preferred
+		font installed. In this case, I'm telling it to use Menlo, but if it doesn't have that font, to use Monaco, 
+		and if it doesn't have that one, to just used any fixed-width font. */
+		
+		/* Now, I'll style the <p> tag */
+		p {
+			color: white;
+			font-family: "Source Code Pro", Menlo, Monaco, fixed-width;
+		}
+		/* And wrap it up by closing the <style> tag with it's mate: */
+	</style>
+	
+<!-- Back to HTML comments! We have now put everything we need in the <head> tag, so let's close it... -->	
+</head>
+
+<!-- ...and open the <body> tag. Inside it is where we place the actual content, hurray! -->
+<body>
+	
+	<!-- Let's start the page with a <h1>. h1 signifies that this is the main "header" for the page, and should briefly
+	describe the content of the page.-->
+	<h1>Hello World Example</h1>
+	
+	<!-- Now, we will write a paragraph of text. Because this is just a normal paragraph, will will wrap it in the <p> 
+	tag (p is for paragraph). -->
+	<p>This is a very basic "Hello World" example made up in HTML and CSS. See if you can change the size of the header text above.</p>
+	
+	<!-- Last but not least, we can't forget to close the <body> and <html> tags! -->
+</body>
+</html>
+
+<!-- See, that wasn't that bad, now was it? If you've used Freeway, you already have a huge head-start as you likly know
+all the CSS properties and values you will need (at least at first). -->
