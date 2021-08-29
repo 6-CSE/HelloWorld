@@ -7,7 +7,7 @@
 ```
 $ sudo apt-get update
 
-$ wget -c https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+$ wget -c https://dl.google.com/go/go1.17.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 ```
 
 Adjusting the Path Variable : 
