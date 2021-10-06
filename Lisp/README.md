@@ -1,6 +1,6 @@
-# Hello World in Fortran Language:
+# Lisp:
 
-## How to install FORTRAN:
+## How to install Lisp:
 ```sudo apt-get install clisp```
 
 ## How to compile code:
