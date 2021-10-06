@@ -1,6 +1,6 @@
 # Icon
 
-To install the Squirrel on Debian like systems:
+To install Icon on Debian like systems:
 
 `sudo apt install icont`
 
