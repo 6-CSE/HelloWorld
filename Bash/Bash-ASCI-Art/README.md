@@ -16,6 +16,13 @@ You can generate your own ASCII text here:
 
 [ASCII Text Generator](https://patorjk.com/software/taag/#p=display&f=Doh&t=Hello%20world) 
 
-## Quick tip:
+## Quick Tip
 Use the up and down arrow keys to navigate through the various fonts, rather 
-than using the dropdown selector and your mouse - it is much faster and easier.
+than using the drop down selector and your mouse - it is much faster and easier.
+
+## Caution
+Be careful with fonts that make use of special characters like quotes ("), single quotes (') 
+and backticks (`). They may require you to quote or escape them: 
+[Quoting special Characters in Bash](https://www.oreilly.com/library/view/learning-the-bash/1565923472/ch01s09.html
+).
+
