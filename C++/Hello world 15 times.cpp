@@ -2,7 +2,10 @@
 using namespace std;
 
 int main () {
-	for (int hw = 1; hw <= 15; hw++) {
+	int number;
+	cout<< "Enter the number of time : "<<endl;
+	cin >>number;
+	for (int hw = 1; hw <= number; hw++) {
 		cout << "Hello-World\n";
 	}
   return 0;
