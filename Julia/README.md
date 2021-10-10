@@ -10,4 +10,4 @@ To install Julia on Debian like systems:
 
 You can run your code with the following: 
 
-julia hello_world.jl
+`julia hello_world.jl`
