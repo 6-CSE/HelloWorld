@@ -12,6 +12,8 @@ You can install LOLCODE from source by doing the following:
 
 ## Run Your Code
 
-to run your hello_world.lol file:
+To run your `hello_world.lol` file:
 
+```
 lci hello_world.lol
+```
