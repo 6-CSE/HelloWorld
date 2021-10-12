@@ -10,7 +10,7 @@ Install the Korn Shell on Debian like systems with:
 
 You can run your hello_world.ksh script with the following:
 
-`./ksh hello_world.ksh`
+`/usr/bin/ksh hello_world.ksh`
 
 Alternatively, you can make the script executable with:
 
