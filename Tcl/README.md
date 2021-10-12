@@ -4,8 +4,9 @@
 
 ### Installation on Windows
    
-    Download the latest version for windows installer [Downloads Page](https://www.activestate.com/products/tcl/downloads/) from the list of Active Tcl binaries available. 
-    Run the downloaded executable to install the Tcl, which can be done by following the on screen instructions.
+Download the latest version for windows installer [Downloads Page](https://www.activestate.com/products/tcl/downloads/) from the list of Active Tcl binaries available. 
+
+Run the downloaded executable to install the Tcl, which can be done by following the on screen instructions.
 
 ### Installation on Linux
 
