@@ -1,0 +1,3 @@
+(: Hello World with XQuery :)
+let $i := "Hello World."
+return $i
