@@ -18,11 +18,11 @@ clc
 disp('Hello World')
 
 ```
-and save the file as hello_world.sce.
+and save the file as HelloWorld.sce.
 
 ## Running or Executing your code  
 ```
-exec hello_world.sce 
+exec HelloWorld.sce 
 ```
 
 ## Output 
