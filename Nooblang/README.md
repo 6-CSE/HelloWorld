@@ -18,7 +18,7 @@ Copy the hello_world.noob file to the examples directory:
 
 `cp /path_to/hello_world.noob ./examples/`
 
-replacing */path_to* in the above command with the path where you saved the file.
+replacing */path_to* in the above command with the path where you saved the *hello_world.noob* file:
 
 alternatively you can create the *hello_world.noob* file with the following command:
 
