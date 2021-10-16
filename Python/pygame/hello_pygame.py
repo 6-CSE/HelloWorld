@@ -24,10 +24,10 @@ def start_the_game():
     # Do the job here !
     pass
 
-menu = pygame_menu.Menu('Welcome', 400, 300,
-                       theme=pygame_menu.themes.THEME_BLUE)
+menu = pygame_menu.Menu('Hello pygame', 400, 300,
+                       theme=pygame_menu.themes.THEME_ORANGE)
 
-menu.add.text_input('Name :', default='John Doe')
+menu.add.text_input('Name :', default='PTMTP')
 menu.add.selector('Difficulty :', [('Hard', 1), ('Easy', 2)], onchange=set_difficulty)
 menu.add.button('Play', start_the_game)
 menu.add.button('Quit', pygame_menu.events.EXIT)
