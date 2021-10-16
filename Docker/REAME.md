@@ -1,4 +1,6 @@
-# Setup & Installation on Mac
+# Docker
+
+## Setup & Installation on Mac
 - Install Homebrew
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -8,7 +10,7 @@
 brew cask install docker
 ```
 
-# How to run
+## How to run
 ```
 docker run hello-world
 ```
