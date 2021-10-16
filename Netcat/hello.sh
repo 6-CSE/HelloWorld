@@ -1,0 +1,1 @@
+nc -zv www.github.com 80
