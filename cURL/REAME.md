@@ -1,4 +1,6 @@
-# How to run
+# cURL
+
+## How to run
 - run curl in terminal respone only header
 ```
 curl -I www.google.com
