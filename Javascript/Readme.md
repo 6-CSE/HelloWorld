@@ -21,7 +21,7 @@ $ node HelloWorld.js
 
 
 
-# Uninstall Java
+# Uninstall Javascript
 
 ```
 $ sudo apt-get remove nodejs
