@@ -1,3 +1,5 @@
-main :-
-    writeln('Hello World'),
+:- (initialization main).
+
+main:-
+    writeln('Hello World!'),
     halt.
