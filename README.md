@@ -21,7 +21,7 @@ Provide `HelloWorld.<ext>` alongwith above mentioned `README.md`.
 
 **_Don't worry if it seems overwhelming. We are there to help you out._**
 
-### Steps to making a Pull Request
+### Steps to create a Pull Request
 
 - Clone to repo to your local machine: `git clone https://github.com/6-CSE/HelloWorld.git`
 (Before committing all files, check if all files are staged atleast. It can be checked using `git status`).
