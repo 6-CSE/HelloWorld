@@ -1,4 +1,4 @@
-# Hello, world! in SQL
+# SQL
 
 ## Follow the below link to install SQL:-
 
