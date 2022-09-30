@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+
+
+// Driver code
+int main()
+{
+  for(i=0;i<69;i++){
+    cout<<"Hello World\n";
+  }
+	return 0;
+}
