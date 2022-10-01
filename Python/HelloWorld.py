@@ -1,6 +1,3 @@
-if __name__ == '__main__':
-	print('hello world')
-else:
-	print('not recognised')
-
+a="hello world" if __name__=='__main__' else "not recognised"
+print(a)
 print('first contribution')
