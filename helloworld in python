@@ -1,0 +1,5 @@
+# this is hello world program in python language in 15 lines.
+i = 0
+while i < 15:
+    print('hello world')
+    i = i + 1
