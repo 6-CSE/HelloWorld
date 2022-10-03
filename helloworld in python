@@ -1,5 +1,35 @@
 # this is hello world program in python language in 15 lines.
+
+# METHOD 1:-
+
 i = 0
 while i < 15:
-    print('hello world')
+    print('hello world\n')
     i = i + 1
+
+# METHOD 2:-
+
+for i in range(15):
+    print("hello world\n")
+    
+#METHOD 3:-
+
+print("Hello WORLD\n"*15)
+
+#METHOD 4:-
+
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
+print("Hello World\n")
