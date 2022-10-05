@@ -1,0 +1,23 @@
+hi bhai
+bol bhai "Kaisa hain tu";
+bol bhai "Aur kya chal rha h life main fogg ko chor k";
+
+bhai ye hai a = 8;
+bhai ye hai b = 4;
+
+bhai ye hai c = sahi; 
+bhai ye hai d = galat;
+
+jab tak bhai (b < 8) {
+  bol bhai b;
+       agar bhai (b == a){
+            bol bhai “b is equal to a”;
+            bol bhai c; 
+        }
+
+      warna bhai 
+            bol bhai d ; 
+  b += 1;
+
+  }
+bye bhai
