@@ -1,16 +1,16 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-std::string hello = "Hello World";
+string hello = "Hello World";
 
-void print_hello(std::string s,int length,int index){
+void print_hello(string s,int length,int index){
    
    if(index == length){
-      std::cout << std::endl;
+      cout <<endl;
       return;
    }
    
-   std::cout<<s[index];
+   cout<<s[index];
    print_hello(s, length, index+1);
 }
 
