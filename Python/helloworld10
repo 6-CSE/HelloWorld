@@ -1,0 +1,4 @@
+def firstlearn():
+  print("Hello world")
+
+firstlearn()
