@@ -1,0 +1,246 @@
+#import libraries
+# This Python 3 environment comes with many helpful analytics libraries installed
+# For example, here's several helpful packages to load in 
+from sklearn.impute import SimpleImputer #The imputer is an estimator used to fill the missing values in datasets.
+from sklearn.model_selection import KFold # K-Folds cross-validator. Provides train/test indices to split data in train/test sets 
+from sklearn import linear_model #Linear models describe a continuous response variable as a function of one or more predictor variables
+from sklearn.metrics import make_scorer #This factory function wraps scoring functions for use in GridSearchCV and cross_val_score 
+
+from sklearn import svm #SVMs are used in applications like email classification, gene classification, and in web pages.
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+from sklearn import neighbors
+from math import sqrt
+
+
+# read data
+df = pd.read_csv(R'C:\Users\csc\OneDrive\Desktop\Python Program\Project 3- Sensorless Speed Control of PMSM motor using machine learning\big-DATA.csv')
+print(df)
+
+
+df.info()
+df.describe().T
+# Count the number of NaNs each column has.
+nans=pd.isnull(df).sum()
+nans[nans>0]
+# Count the column types
+df.dtypes.value_counts()
+df.corr()
+import seaborn as sns
+sns.jointplot(x='wR', y='time', data=df, kind='reg')
+plt.xlabel("time")
+plt.ylabel("wR")
+#correlation map
+f,ax=plt.subplots(figsize=(12,12))
+corr=df.corr()
+
+sns.heatmap(corr, annot=True, linewidths=.5, fmt='.2f', 
+            mask= np.zeros_like(corr,dtype=np.bool), 
+            cmap=sns.diverging_palette(100,200,as_cmap=True), 
+            square=True, ax=ax)
+
+plt.show()
+import statsmodels.api as sm
+#Defining dependet and independent variable
+X = df['ID']
+X=sm.add_constant(X)
+
+y = df['wR']
+
+lm=sm.OLS(y,X)
+model=lm.fit()
+
+model.summary()
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+
+# Load the CSV file into a pandas DataFrame
+df = pd.read_csv(R'C:\Users\csc\OneDrive\Desktop\Python Program\Project 3- Sensorless Speed Control of PMSM motor using machine learning\big-DATA.csv')
+
+
+# Extract the columns containing the data to be normalized
+columns_to_normalize = ['time', 'I','IQ', 'ID', 'V','VQ','VD','wR','theta']
+
+# Create a MinMaxScaler object
+scaler = MinMaxScaler()
+
+# Normalize the selected columns
+df[columns_to_normalize] = scaler.fit_transform(df[columns_to_normalize])
+
+# Save the normalized data back to a CSV file
+df.to_csv('normalized_data.csv', index=False)
+
+model.params
+print("f_pvalue:", "%.4f" % model.f_pvalue)
+model.mse_model #mean squared error is too much. It is not good.
+model.rsquared #Not bad
+model.rsquared_adj #Not bad
+model.fittedvalues[0:5] #Predicted values
+y[0:5] #Real values
+#Model equation
+print("Motor speed = " + 
+      str("%.3f" % model.params[0]) + ' + i_d' + "*" + 
+      str("%.3f" % model.params[1]))
+#Model Visualization 
+import seaborn as sns
+import pandas as pd
+
+# Load data
+df = pd.read_csv(R'C:\Users\csc\OneDrive\Desktop\Python Program\Project 3- Sensorless Speed Control of PMSM motor using machine learning\big-DATA.csv')
+
+# Create regression plot
+g = sns.regplot(x='wR', y='time', data=df, ci=None, scatter_kws={'color': 'r', 's':9})
+
+# Set plot title and axis labels
+g.set_title('Model equation: wR = -0.002 + time * -0.725')
+g.set_ylabel('wR')
+g.set_xlabel('time')
+print(df.columns)
+
+from sklearn.metrics import r2_score,mean_squared_error
+mse=mean_squared_error(y, model.fittedvalues)
+rmse=np.sqrt(mse)
+rmse
+k_t=pd.DataFrame({'Real_values':y[0:50], 
+                  'Predicted_values' :model.fittedvalues[0:50]})
+k_t['error']=k_t['Real_values']-k_t['Predicted_values']
+k_t.head()
+model.resid[0:10] #It is easy way to learn residuals.
+plt.plot(model.resid);
+import statsmodels.api as sm
+#Defining dependet and independent variable
+X = df['VD']
+X=sm.add_constant(X)
+
+y = df['wR']
+
+lm=sm.OLS(y,X)
+model=lm.fit()
+
+model.summary()
+model.params
+print("f_pvalue:", "%.4f" % model.f_pvalue)
+model.mse_model #mean squared error is too much. It is not good.
+model.rsquared #Not bad
+model.fittedvalues[0:5] #Predicted values
+y[0:5] #Real values
+#Model equation
+print("Motor speed = " +
+      str("%.3f" % model.params[0]) + ' + VD' + "*" + 
+      str("%.3f" % model.params[1]))
+#Model Visualization 
+import seaborn as sns
+import pandas as pd
+
+# Load data
+df = pd.read_csv(R'C:\Users\csc\OneDrive\Desktop\Python Program\Project 3- Sensorless Speed Control of PMSM motor using machine learning\big-DATA.csv')
+
+# Create regression plot
+g = sns.regplot(x='time', y='torque', data=df, ci=None, scatter_kws={'color': 'r', 's':9})
+
+# Set plot title and axis labels
+g.set_title('Model equation: torque = -0.002 + time * -0.725')
+g.set_ylabel('torque')
+g.set_xlabel('time')
+
+from sklearn.metrics import r2_score,mean_squared_error
+
+mse=mean_squared_error(y, model.fittedvalues)
+rmse=np.sqrt(mse)
+rmse
+k_t=pd.DataFrame({'Real_values':y[0:50], 
+                  'Predicted_values' :model.fittedvalues[0:50]})
+k_t['error']=k_t['Real_values']-k_t['Predicted_values']
+k_t.head()
+model.resid[0:10] #It easy way to learn residuals.
+#FORMULA FOR THETA USING LINEAR REGRESSION
+
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Load the dataset
+df = pd.read_csv(R'C:\Users\csc\OneDrive\Desktop\Python Program\Project 3- Sensorless Speed Control of PMSM motor using machine learning\big-DATA.csv')
+
+# Select the columns to use in the model
+X = df[['I', 'V']]
+y = df['theta']
+
+# Create a linear regression model
+model = LinearRegression()
+
+# Fit the model to the data
+model.fit(X, y)
+
+# Print the coefficients of the model
+print(f'theta = {model.intercept_} + {model.coef_[0]} * I  + {model.coef_[1]} * V')
+
+#FORMULA FOR SPEED USING LINEAR REGRESSION
+
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Load the dataset
+df = pd.read_csv(R'C:\Users\csc\OneDrive\Desktop\Python Program\Project 3- Sensorless Speed Control of PMSM motor using machine learning\normalized_data.csv')
+
+# Select the columns to use in the model
+X = df[['I', 'V']]
+y = df['wR']
+
+# Create a linear regression model
+model = LinearRegression()
+
+# Fit the model to the data
+model.fit(X, y)
+
+# Print the coefficients of the model
+print(f'wR = {model.intercept_} + {model.coef_[0]} * I  + {model.coef_[1]} * V') 
+
+
+
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+# Load the dataset
+df = pd.read_csv(R'C:\Users\csc\OneDrive\Desktop\Python Program\Project 3- Sensorless Speed Control of PMSM motor using machine learning\big-DATA.csv')
+
+# Select the columns to use in the model
+X = df[['I', 'V']]
+y = df['wR']
+
+# Create a linear regression model
+model = LinearRegression()
+
+# Fit the model to the data
+model.fit(X, y)
+
+# Print the coefficients of the model
+print(model.coef_)
+print(model.intercept_)
+
+
+from sklearn.linear_model import LinearRegression
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv(R'C:\Users\csc\OneDrive\Desktop\Python Program\Project 3- Sensorless Speed Control of PMSM motor using machine learning\big-DATA.csv')
+
+# Extract the input and output variables
+x = df["I"].values.reshape(-1,1)
+y = df["wR"].values.reshape(-1,1)
+
+# Create a linear regression model
+model = LinearRegression()
+
+# Fit the model to the data
+model.fit(x, y)
+
+# Print the model coefficients
+print("Coefficients:", model.coef_)
+print("Intercept:", model.intercept_)
+
+#formula prediction 
+print("wR = 0.07691073 * I - 10.02053037")
+plt.plot(model.resid);
