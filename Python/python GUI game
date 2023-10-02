@@ -1,0 +1,58 @@
+
+import tkinter as tk
+import random
+
+class AdditionGame:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Addition Game")
+
+        self.score = 0
+        self.num_questions = 0
+
+        self.label = tk.Label(root, text="Welcome to the Addition Game!", font=("Arial", 18))
+        self.label.pack(pady=10)
+
+        self.question_label = tk.Label(root, text="")
+        self.question_label.pack()
+
+        self.answer_entry = tk.Entry(root)
+        self.answer_entry.pack(pady=5)
+
+        self.submit_button = tk.Button(root, text="Submit", command=self.check_answer)
+        self.submit_button.pack()
+
+        self.feedback_label = tk.Label(root, text="", font=("Arial", 14))
+        self.feedback_label.pack(pady=10)
+
+        self.generate_question()
+
+    def generate_question(self):
+        num1 = random.randint(1, 10)
+        num2 = random.randint(1, 10)
+        self.correct_answer = num1 + num2
+        self.question_label.config(text=f"What is {num1} + {num2}?")
+        self.answer_entry.delete(0, tk.END)
+
+    def check_answer(self):
+        user_answer = self.answer_entry.get()
+        try:
+            user_answer = int(user_answer)
+            if user_answer == self.correct_answer:
+                self.feedback_label.config(text="Correct!", fg="green")
+                self.score += 1
+            else:
+                self.feedback_label.config(text="Incorrect. Try again.", fg="red")
+            self.num_questions += 1
+            self.update_score()
+            self.generate_question()
+        except ValueError:
+            self.feedback_label.config(text="Please enter a valid number.", fg="red")
+
+    def update_score(self):
+        self.label.config(text=f"Score: {self.score}/{self.num_questions}")
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    game = AdditionGame(root)
+    root.mainloop()
