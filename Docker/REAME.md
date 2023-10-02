@@ -9,6 +9,10 @@
 ```
 brew cask install docker
 ```
+- Verify Installation
+```
+docker version
+```
 
 ## How to run
 ```
