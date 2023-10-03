@@ -1,6 +1,6 @@
 if __name__ == '__main__':
-	print('hello world')
+	print('Hello World')
 else:
-	print('not recognised')
+	print('Not Recognised')
 
-print('first contribution')
+print('First Contribution')
