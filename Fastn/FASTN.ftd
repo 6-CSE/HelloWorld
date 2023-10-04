@@ -1,0 +1,5 @@
+-- import: FASTN
+
+-- fastn.package: expander
+
+-- fastn.dependency: fastn-community.github.io/doc-site
