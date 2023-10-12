@@ -1,0 +1,24 @@
+#include <iostream>  
+#include <cstring>  
+using namespace std;  
+int main()  
+{  
+    string c;
+    int tr=0,count=0;
+    getline(cin,c);
+    
+    
+    tr=c.find("a");
+    for(int i=0;i<c.length();i++)
+    {
+        if(c[i]== c.find("a"))
+        {
+            count++;
+        }
+    }
+    cout<<tr<<endl;
+     cout<<count<<endl;
+    return 0;
+
+}
+   
