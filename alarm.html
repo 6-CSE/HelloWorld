@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <style type="text/css">
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0 0 20px;
+    color: #333;
+}
+
+.alarm-settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="time"] {
+    padding: 8px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alarm Clock</h1>
+        <div class="alarm-settings">
+            <input type="time" id="alarm-time">
+            <button id="set-alarm">Set Alarm</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const alarmTimeInput = document.getElementById("alarm-time");
+    const setAlarmButton = document.getElementById("set-alarm");
+
+    setAlarmButton.addEventListener("click", () => {
+        const alarmTime = alarmTimeInput.value;
+        const now = new Date();
+        const alarmDate = new Date(now.toDateString() + " " + alarmTime);
+        const timeUntilAlarm = alarmDate - now;
+
+        if (timeUntilAlarm < 0) {
+            alert("Please choose a time in the future.");
+        } else {
+            setTimeout(() => {
+                alert("Alarm triggered!");
+            }, timeUntilAlarm);
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
