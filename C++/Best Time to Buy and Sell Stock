@@ -1,0 +1,19 @@
+class Solution {
+public:
+int diff=0;
+   int minElement=INT_MAX;
+    int maxProfit(vector<int>& prices) {
+        for(int i=0;i<prices.size();i++){
+            minElement=min(prices[i],minElement);
+            if(prices[i]>minElement){
+                diff=max(diff,prices[i]-minElement);
+            }
+            if(prices[i]<minElement){
+                minElement=prices[i];
+            }
+
+        }
+        return diff;
+
+    }
+};
